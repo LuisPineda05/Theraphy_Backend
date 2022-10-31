@@ -9,3 +9,4 @@ public class MappingConfiguration {
     public TreatmentMapper treatmentMapper() {
         return new TreatmentMapper();
 }
+}

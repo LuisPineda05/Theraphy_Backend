@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/api/v1/physiotherapist", produces = "application/json")
+@RequestMapping(value = "/api/v1/physiotherapists", produces = "application/json")
 public class PhysiotherapistController {
 
     private final PhysiotherapistService physiotherapistService;
@@ -27,16 +27,16 @@ public class PhysiotherapistController {
 
     @GetMapping
     public Page<PhysiotherapistResource> getAllPhysiotherapist(Pageable pageable) {
-        return mapper.modelListPage(physiotheapistService.getAll(), pageable);
+        return mapper.modelListPage(physiotherapistService.getAll(), pageable);
     }
 
     @GetMapping("{physiotherapistId}")
     public PhysiotherapistResource getPhysiotherapistById(@PathVariable Long physiotherapistId) {
-        return mapper.toResource(physiotheapistService.getById(physiotherapistId));
+        return mapper.toResource(physiotherapistService.getById(physiotherapistId));
     }
 
     @PostMapping
     public ResponseEntity<PhysiotherapistResource> createPhysiotherapist(@RequestBody CreatePhysiotherapistResource resource) {
-        return new ResponseEntity<>(mapper.toResource(physiotheapistService.create(mapper.toModel(resource))), HttpStatus.CREATED);
+        return new ResponseEntity<>(mapper.toResource(physiotherapistService.create(mapper.toModel(resource))), HttpStatus.CREATED);
     }
 }

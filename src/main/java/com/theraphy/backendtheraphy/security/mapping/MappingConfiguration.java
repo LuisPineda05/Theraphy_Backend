@@ -14,4 +14,9 @@ public class MappingConfiguration {
     public PatientMapper patientMapper() {
         return new PatientMapper();
     }
+
+    @Bean
+    public PhysiotherapistMapper physiotherapistMapper() {
+        return new PhysiotherapistMapper();
+    }
 }

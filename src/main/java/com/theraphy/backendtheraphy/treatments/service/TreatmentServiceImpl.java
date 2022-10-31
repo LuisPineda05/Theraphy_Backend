@@ -1,11 +1,18 @@
 package com.theraphy.backendtheraphy.treatments.service;
 
+import com.theraphy.backendtheraphy.shared.exception.ResourceNotFoundException;
+import com.theraphy.backendtheraphy.shared.exception.ResourceValidationException;
 import com.theraphy.backendtheraphy.treatments.domain.model.entity.Treatment;
 import com.theraphy.backendtheraphy.treatments.domain.persistence.TreatmentRepository;
 import com.theraphy.backendtheraphy.treatments.domain.service.TreatmentService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
+import java.util.List;
+import java.util.Set;
 
 @Service
 public class TreatmentServiceImpl implements TreatmentService{

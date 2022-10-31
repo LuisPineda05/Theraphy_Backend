@@ -2,10 +2,15 @@ package com.theraphy.backendtheraphy.treatments.mapping;
 
 import com.theraphy.backendtheraphy.shared.mapping.EnhancedModelMapper;
 import com.theraphy.backendtheraphy.treatments.domain.model.entity.Treatment;
+import com.theraphy.backendtheraphy.treatments.resource.CreateTreatmentResource;
 import com.theraphy.backendtheraphy.treatments.resource.TreatmentResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+
+import java.io.Serializable;
+import java.util.List;
 
 public class TreatmentMapper implements Serializable {
 

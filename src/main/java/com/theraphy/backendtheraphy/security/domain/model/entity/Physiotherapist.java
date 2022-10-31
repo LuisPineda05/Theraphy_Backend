@@ -16,43 +16,42 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "physiotherapist")
+@Table(name = "physiotherapists")
 public class Physiotherapist extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long user_id;
+    @Column(name = "user_id")
+    private Long userId;
 
     @NotNull
     @NotBlank
     @Size(max = 60)
     @Column(name = "first_name")
-    private String first_name;
+    private String firstName;
 
     @NotNull
     @NotBlank
     @Size(max = 60)
     @Column(name = "paternal_surname")
-    private String paternal_surname;
+    private String paternalSurname;
 
     @NotNull
     @NotBlank
     @Size(max = 60)
     @Column(name = "maternal_surname")
-    private String maternal_surname;
+    private String maternalSurname;
 
     @NotNull
     @NotBlank
     @Size(max = 60)
-    @Column(name = "specialization")
     private String specialization;
 
     private Integer  age;
 
     @NotNull
     @NotBlank
-    @Column(name = "last_name")
     private String location;
 
     @NotNull
@@ -68,7 +67,8 @@ public class Physiotherapist extends AuditModel {
 
     private Integer rating;
 
-    private Integer  consultations_quantity;
+    @Column(name = "consultations_quantity")
+    private Integer  consultationsQuantity;
 
     @NotNull
     @NotBlank

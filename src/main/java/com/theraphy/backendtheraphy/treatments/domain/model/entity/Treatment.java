@@ -32,6 +32,7 @@ public class Treatment extends AuditModel {
     @Size(max = 60)
     private String description;
 
+    @Column(name = "sessions_quantity")
     private Integer sessionsQuantity;
 
     @NotNull
@@ -46,6 +47,7 @@ public class Treatment extends AuditModel {
     @NotNull
     @NotBlank
     @Size(max = 240)
+    @Column(name = "video_sessions")
     private String videoSessions;
 
 }

@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
+import java.util.List;
+import java.util.Set;
 
 @Service
 public class PhysiotherapistServiceImpl implements PhysiotherapistService {
@@ -38,7 +40,7 @@ public class PhysiotherapistServiceImpl implements PhysiotherapistService {
 
     @Override
     public Physiotherapist getById(Long physiotherapistId) {
-        return PhysiotherapistRepository.findById(physiotherapistId)
+        return this.physiotherapistRepository.findById(physiotherapistId)
                 .orElseThrow(() -> new ResourceNotFoundException(ENTITY, physiotherapistId));
     }
 

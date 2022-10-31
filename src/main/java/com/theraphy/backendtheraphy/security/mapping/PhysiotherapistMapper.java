@@ -12,7 +12,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 
-public class PhysiotherapistMapper implements Serializable{
+import java.io.Serializable;
+import java.util.List;
+
+public class PhysiotherapistMapper implements Serializable {
     @Autowired
     EnhancedModelMapper mapper;
 

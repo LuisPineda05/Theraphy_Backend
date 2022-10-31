@@ -1,9 +1,6 @@
 package com.theraphy.backendtheraphy.security.resource;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.With;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -13,6 +10,7 @@ import javax.validation.constraints.Size;
 @Setter
 @With
 @NoArgsConstructor
+@AllArgsConstructor
 public class CreatePhysiotherapistResource {
 
     @NotNull
