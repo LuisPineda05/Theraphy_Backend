@@ -19,6 +19,6 @@ public class PhysiotherapistResource {
     private String birthdate;
     private String  email;
     private Integer rating;
-    private Integer  consultationsQuantity;
+    private Integer consultationsQuantity;
     private String photo;
 }
