@@ -37,8 +37,6 @@ public class CreatePhysiotherapistResource {
     private String specialization;
 
     @NotNull
-    @NotBlank
-    @Size(max = 60)
     private Integer  age;
 
     @NotNull
@@ -57,13 +55,9 @@ public class CreatePhysiotherapistResource {
     private String  email;
 
     @NotNull
-    @NotBlank
-    @Size(max = 60)
     private Integer rating;
 
     @NotNull
-    @NotBlank
-    @Size(max = 60)
     private Integer  consultationsQuantity;
 
     @NotNull

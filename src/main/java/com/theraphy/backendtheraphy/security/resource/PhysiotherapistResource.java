@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 public class PhysiotherapistResource {
     private Long id;
-    private Long useId;
+    private Long userId;
     private String firstName;
     private String paternalSurname;
     private String maternalSurname;

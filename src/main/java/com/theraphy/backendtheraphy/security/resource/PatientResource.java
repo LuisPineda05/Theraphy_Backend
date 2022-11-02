@@ -11,13 +11,13 @@ import java.util.Date;
 @AllArgsConstructor
 public class PatientResource {
     private Long id;
-    private Long user_id;
-    private String first_name;
-    private String last_name;
+    private Long userId;
+    private String firstName;
+    private String lastName;
     private Integer age;
     private String birthday;
     private String email;
-    private Integer appointment_quantity;
+    private Integer appointmentQuantity;
     private String photo;
 
 }

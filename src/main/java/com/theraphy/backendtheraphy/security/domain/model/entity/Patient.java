@@ -44,8 +44,6 @@ public class Patient extends AuditModel {
     private String email;
 
     @NotNull
-    @NotBlank
-    @Size(max = 60)
     @Column(name = "appointment_quantity")
     private Integer appointmentQuantity;
 
@@ -53,6 +51,11 @@ public class Patient extends AuditModel {
     @NotBlank
     @Size(max = 60)
     private String photo;
+
+    @NotNull
+    @NotBlank
+    @Size(max = 60)
+    private String birthday;
 
     @NotNull
     @Column(name = "user_id")

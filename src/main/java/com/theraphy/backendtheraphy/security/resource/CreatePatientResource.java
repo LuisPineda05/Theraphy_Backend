@@ -33,8 +33,6 @@ public class CreatePatientResource {
     private String birthday;
 
     @NotNull
-    @NotBlank
-    @Size(max = 60)
     private Integer appointmentQuantity;
 
     @NotNull
