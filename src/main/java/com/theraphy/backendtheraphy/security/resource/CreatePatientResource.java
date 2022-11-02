@@ -17,12 +17,12 @@ public class CreatePatientResource {
     @NotNull
     @NotBlank
     @Size(max = 60)
-    private String first_name;
+    private String firstName;
 
     @NotNull
     @NotBlank
     @Size(max = 60)
-    private String last_name;
+    private String lastName;
 
     @Min(18)
     private Integer age;
@@ -35,10 +35,10 @@ public class CreatePatientResource {
     @NotNull
     @NotBlank
     @Size(max = 60)
-    private Integer appointment_quantity;
+    private Integer appointmentQuantity;
 
     @NotNull
-    private Long user_id;
+    private Long userId;
 
     @NotNull
     @NotBlank

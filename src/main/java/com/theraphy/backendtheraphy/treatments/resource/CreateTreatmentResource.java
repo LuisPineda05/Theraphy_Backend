@@ -24,7 +24,7 @@ public class CreateTreatmentResource {
     private String description;
 
     @NotNull
-    private Long physiotherapist_id;
+    private Long physiotherapistId;
 
     @NotNull
     @NotBlank

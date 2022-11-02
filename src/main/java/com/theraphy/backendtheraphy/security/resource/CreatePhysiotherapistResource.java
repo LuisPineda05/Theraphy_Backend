@@ -14,22 +14,22 @@ import javax.validation.constraints.Size;
 public class CreatePhysiotherapistResource {
 
     @NotNull
-    private Long user_id;
+    private Long userId;
 
     @NotNull
     @NotBlank
     @Size(max = 60)
-    private String first_name;
+    private String firstName;
 
     @NotNull
     @NotBlank
     @Size(max = 60)
-    private String paternal_surname;
+    private String paternalSurname;
 
     @NotNull
     @NotBlank
     @Size(max = 60)
-    private String maternal_surname;
+    private String maternalSurname;
 
     @NotNull
     @NotBlank
@@ -64,7 +64,7 @@ public class CreatePhysiotherapistResource {
     @NotNull
     @NotBlank
     @Size(max = 60)
-    private Integer  consultations_quantity;
+    private Integer  consultationsQuantity;
 
     @NotNull
     @NotBlank

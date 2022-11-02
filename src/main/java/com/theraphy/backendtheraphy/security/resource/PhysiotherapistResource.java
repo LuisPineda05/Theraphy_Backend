@@ -9,16 +9,16 @@ import lombok.*;
 @AllArgsConstructor
 public class PhysiotherapistResource {
     private Long id;
-    private Long user_id;
-    private String first_name;
-    private String paternal_surname;
-    private String maternal_surname;
+    private Long useId;
+    private String firstName;
+    private String paternalSurname;
+    private String maternalSurname;
     private String specialization;
     private Integer  age;
     private String location;
     private String birthdate;
     private String  email;
     private Integer rating;
-    private Integer  consultations_quantity;
+    private Integer  consultationsQuantity;
     private String photo;
 }
