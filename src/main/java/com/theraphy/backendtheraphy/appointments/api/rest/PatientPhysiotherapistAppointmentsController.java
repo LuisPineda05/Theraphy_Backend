@@ -55,6 +55,14 @@ public class PatientPhysiotherapistAppointmentsController {
                                              @PathVariable Long patientId,
                                              @RequestBody CreateAppointmentResource resource) {
 
+        //patientService.getById(patientId);
+        // physiotherapistService.getById(physiotherapistId)
+
+
+        physiotherapistService.addAppointmentToPhysiotherapist(physiotherapistId,resource.getPatientName(),resource.getPhysiotherapistName(),resource.getDateScheduled(),
+                resource.getHour(),resource.getMinute(),resource.getAmPm(),resource.getTopic(),resource.isDone(),resource.getDiagnosis());
+
+
         patientService.addAppointmentToPatient(patientId, resource.getPatientName(),resource.getPhysiotherapistName(),resource.getDateScheduled(),
                 resource.getHour(),resource.getMinute(),resource.getAmPm(),resource.getTopic(),resource.isDone(),resource.getDiagnosis());
 
