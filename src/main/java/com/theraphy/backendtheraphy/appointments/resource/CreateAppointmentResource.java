@@ -1,5 +1,6 @@
 package com.theraphy.backendtheraphy.appointments.resource;
 
+import com.theraphy.backendtheraphy.security.domain.model.entity.Patient;
 import com.theraphy.backendtheraphy.security.domain.model.entity.Physiotherapist;
 import lombok.*;
 
@@ -14,8 +15,6 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 public class CreateAppointmentResource {
 
-
-
     @NotNull
     @NotBlank
     @Size(max = 240)
@@ -23,13 +22,13 @@ public class CreateAppointmentResource {
 
     @NotNull
     @NotBlank
-    @Size(max = 240)
+    @Size(max = 60)
     private String physiotherapistName;
 
     @NotNull
     @NotBlank
-    @Size(max = 30)
-    private String date;
+    @Size(max = 50)
+    private String dateScheduled;
 
     @NotNull
     private Integer hour;
@@ -37,21 +36,23 @@ public class CreateAppointmentResource {
     @NotNull
     private Integer minute;
 
+
     @NotNull
     @NotBlank
-    @Size(max = 10)
+    @Size(max = 50)
     private String amPm;
 
     @NotNull
     @NotBlank
-    @Size(max = 30)
-    private String topic;
+    @Size(max = 240)
+    private String diagnosis;
 
     @NotNull
-    private Boolean done;
+    private boolean done;
 
     @NotNull
     @NotBlank
-    @Size(max = 1200)
-    private String diagnosis;
+    @Size(max = 240)
+    private String topic;
+
 }

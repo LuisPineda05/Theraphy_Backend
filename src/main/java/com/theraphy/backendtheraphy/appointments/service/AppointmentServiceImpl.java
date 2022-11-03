@@ -5,8 +5,6 @@ import com.theraphy.backendtheraphy.appointments.domain.persistence.AppointmentR
 import com.theraphy.backendtheraphy.appointments.domain.service.AppointmentService;
 import com.theraphy.backendtheraphy.shared.exception.ResourceNotFoundException;
 import com.theraphy.backendtheraphy.shared.exception.ResourceValidationException;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
@@ -16,6 +14,7 @@ import java.util.Set;
 
 @Service
 public class AppointmentServiceImpl implements AppointmentService {
+
     private static final String ENTITY = "Appointment";
 
     private final AppointmentRepository appointmentRepository;
@@ -27,20 +26,28 @@ public class AppointmentServiceImpl implements AppointmentService {
         this.validator = validator;
     }
 
+
     @Override
     public List<Appointment> getAll() {
         return appointmentRepository.findAll();
     }
 
     @Override
-    public Page<Appointment> getAll(Pageable pageable) {
-        return appointmentRepository.findAll(pageable);
-    }
-
-    @Override
     public Appointment getById(Long appointmentId) {
         return appointmentRepository.findById(appointmentId)
                 .orElseThrow(() -> new ResourceNotFoundException(ENTITY, appointmentId));
+    }
+
+    @Override
+    public Appointment getByPatientId(Long patientId) {
+        return appointmentRepository.findByPatientId(patientId)
+                .orElseThrow(() -> new ResourceNotFoundException("No Appointments with this id found for Patient"));
+    }
+
+    @Override
+    public Appointment getByPhysiotherapistId(Long physiotherapistId) {
+        return appointmentRepository.findByPhysiotherapistId(physiotherapistId)
+                .orElseThrow(() -> new ResourceNotFoundException("No Appointments with this if found for Physiotherapist"));
     }
 
     @Override
@@ -54,4 +61,5 @@ public class AppointmentServiceImpl implements AppointmentService {
 
         return appointmentRepository.save(appointment);
     }
+
 }
