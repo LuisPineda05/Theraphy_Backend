@@ -12,4 +12,7 @@ public interface PatientService {
     Page<Patient> getAll(Pageable pageable);
     Patient getById(Long patientId);
     Patient create(Patient patient);
+
+    Patient addAppointmentToPatient(Long patientId, String patientName, String physiotherapistName,
+                                    String dateScheduled, Integer hour, Integer minute, String amPm, String topic, Boolean done, String diagnosis);
 }

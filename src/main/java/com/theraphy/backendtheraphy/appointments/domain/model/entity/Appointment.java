@@ -36,8 +36,8 @@ public class Appointment extends AuditModel  {
     @Size(max = 60)
     private String patientName;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "physiotherapist_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "physiotherapist_id", nullable = true)
     @JsonIgnore
     private Physiotherapist physiotherapist;
 

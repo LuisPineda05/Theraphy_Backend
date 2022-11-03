@@ -55,6 +55,15 @@ public class PatientServiceImpl implements PatientService {
 
         return patientRepository.save(patient);
     }
+
+    @Override
+    public Patient addAppointmentToPatient(Long patientId, String patientName, String physiotherapistName,
+                                           String dateScheduled, Integer hour, Integer minute, String amPm, String topic, Boolean done, String diagnosis) {
+        return patientRepository.findById(patientId).map(patient -> {
+            return patientRepository.save(patient.addAppointment(patientName,physiotherapistName,
+                    dateScheduled, hour,  minute,  amPm, topic, done, diagnosis));
+        }).orElseThrow(() -> new ResourceNotFoundException(ENTITY, patientId));
+    }
 }
 
 

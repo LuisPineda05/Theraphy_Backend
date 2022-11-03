@@ -1,6 +1,7 @@
 package com.theraphy.backendtheraphy.security.domain.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.theraphy.backendtheraphy.appointments.domain.model.entity.Appointment;
 import com.theraphy.backendtheraphy.shared.domain.model.AuditModel;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -10,6 +11,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
 @Getter
@@ -95,3 +98,19 @@ public class Patient extends AuditModel {
         return this;
     }
 }
+
+
+/* private Long id;
+    private PatientResource patient;
+    private String patientName;
+    private PhysiotherapistResource physiotherapist;
+    private String physiotherapistName;
+    private String dateScheduled;
+    private Integer hour;
+    private Integer minute;
+    private String amPm;
+    private String topic;
+    private Boolean done;
+    private String diagnosis;
+
+ */
