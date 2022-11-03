@@ -5,8 +5,6 @@ import com.theraphy.backendtheraphy.appointments.domain.service.AppointmentServi
 import com.theraphy.backendtheraphy.appointments.mapping.AppointmentMapper;
 import com.theraphy.backendtheraphy.appointments.resource.AppointmentResource;
 import com.theraphy.backendtheraphy.appointments.resource.CreateAppointmentResource;
-import com.theraphy.backendtheraphy.treatments.resource.CreateTreatmentResource;
-import com.theraphy.backendtheraphy.treatments.resource.TreatmentResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -16,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value = "/api/v1/appointments", produces = "application/json")
 public class AppointmentsController {
+
     private final AppointmentService appointmentService;
 
     private final AppointmentMapper mapper;
@@ -24,7 +23,6 @@ public class AppointmentsController {
         this.appointmentService = appointmentService;
         this.mapper = mapper;
     }
-
 
     @GetMapping
     public Page<AppointmentResource> getAllAppointments(Pageable pageable) {
@@ -40,6 +38,5 @@ public class AppointmentsController {
     public ResponseEntity<AppointmentResource> createAppointment(@RequestBody CreateAppointmentResource resource) {
         return new ResponseEntity<>(mapper.toResource(appointmentService.create(mapper.toModel(resource))), HttpStatus.CREATED);
     }
-
 
 }

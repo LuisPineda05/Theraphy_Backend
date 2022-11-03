@@ -1,21 +1,23 @@
 package com.theraphy.backendtheraphy.appointments.domain.persistence;
 
 import com.theraphy.backendtheraphy.appointments.domain.model.entity.Appointment;
-import com.theraphy.backendtheraphy.security.domain.model.entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface AppointmentRepository extends JpaRepository<Appointment, Long> {
 
-    //Appointment findByPatientId(Long patientId);
+    Optional<Appointment> findByPatientId(Long patientId);
 
-    Appointment findByPatientName(String patientName);
+    List<Appointment> findByPatientName(String patientName);
 
-    //Appointment findByPhysiotherapistId(Long physiotherapistId);
+    Optional<Appointment> findByPhysiotherapistId(Long physiotherapistId);
 
-    Appointment findByPhysiotherapistName(String physiotherapistName);
+    List<Appointment> findByPhysiotherapistName(String physiotherapistName);
 
-    Appointment findByDone(Boolean done);
+    List<Appointment> findByDone(Boolean done);
 
 }

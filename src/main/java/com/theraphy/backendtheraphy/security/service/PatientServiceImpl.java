@@ -1,7 +1,6 @@
 package com.theraphy.backendtheraphy.security.service;
 
 import com.theraphy.backendtheraphy.security.domain.model.entity.Patient;
-import com.theraphy.backendtheraphy.security.domain.model.entity.User;
 import com.theraphy.backendtheraphy.security.domain.persistence.PatientRepository;
 import com.theraphy.backendtheraphy.security.domain.service.PatientService;
 import com.theraphy.backendtheraphy.shared.exception.ResourceNotFoundException;
@@ -57,3 +56,5 @@ public class PatientServiceImpl implements PatientService {
         return patientRepository.save(patient);
     }
 }
+
+

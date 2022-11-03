@@ -13,4 +13,7 @@ public interface PhysiotherapistService {
     Physiotherapist getById(Long physiotherapistId);
     Physiotherapist create(Physiotherapist physiotherapist
     );
+
+    Physiotherapist addAppointmentToPhysiotherapist(Long physiotherapistId, String patientName, String physiotherapistName,
+                                                    String dateScheduled, Integer hour, Integer minute, String amPm, String topic, Boolean done, String diagnosis);
 }

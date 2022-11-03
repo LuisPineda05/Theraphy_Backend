@@ -65,4 +65,33 @@ public class Patient extends AuditModel {
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreatedDate
     private Date createdAt;
+
+    // Relationships
+
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER, mappedBy = "patient")
+    private Set<Appointment> appointments = new HashSet<>();
+
+    public Patient addAppointment(String patientName, String physiotherapistName,
+                                   String dateScheduled, Integer hour, Integer minute, String amPm, String topic, Boolean done, String diagnosis) {
+        // Initialize if null
+        if(appointments == null) {
+            appointments = new HashSet<>();
+        }
+
+        // Add Appointment to Patient
+        appointments.add(new Appointment()
+                        .withPhysiotherapistName(physiotherapistName)
+                        .withPatientName(patientName)
+                        .withDateScheduled(dateScheduled)
+                        .withDone(done)
+                        .withAmPm(amPm)
+                        .withMinute(minute)
+                        .withDiagnosis(diagnosis)
+                        .withHour(hour)
+                        .withTopic(topic)
+                .withPatient(this));
+
+        return this;
+    }
 }
